@@ -68,14 +68,14 @@ module tb();
 	logic motor_ref;
 	logic motor_dut;
 
+	wire tb_match;		// Verification
+	wire tb_mismatch = ~tb_match;
 	initial begin 
 		$dumpfile("wave.vcd");
 		$dumpvars(1, stim1.clk, tb_mismatch ,ring,vibrate_mode,ringer_ref,ringer_dut,motor_ref,motor_dut );
 	end
 
 
-	wire tb_match;		// Verification
-	wire tb_mismatch = ~tb_match;
 	
 	stimulus_gen stim1 (
 		.clk,

@@ -83,14 +83,14 @@ module tb();
 	logic up_ref;
 	logic up_dut;
 
+	wire tb_match;		// Verification
+	wire tb_mismatch = ~tb_match;
 	initial begin 
 		$dumpfile("wave.vcd");
 		$dumpvars(1, stim1.clk, tb_mismatch ,scancode,left_ref,left_dut,down_ref,down_dut,right_ref,right_dut,up_ref,up_dut );
 	end
 
 
-	wire tb_match;		// Verification
-	wire tb_mismatch = ~tb_match;
 	
 	stimulus_gen stim1 (
 		.clk,

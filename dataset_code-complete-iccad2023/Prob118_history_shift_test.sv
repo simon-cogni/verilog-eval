@@ -137,14 +137,14 @@ module tb();
 	logic [31:0] predict_history_ref;
 	logic [31:0] predict_history_dut;
 
+	wire tb_match;		// Verification
+	wire tb_mismatch = ~tb_match;
 	initial begin 
 		$dumpfile("wave.vcd");
 		$dumpvars(1, stim1.clk, tb_mismatch ,clk,areset,predict_valid,predict_taken,train_mispredicted,train_taken,train_history,predict_history_ref,predict_history_dut );
 	end
 
 
-	wire tb_match;		// Verification
-	wire tb_mismatch = ~tb_match;
 	
 	stimulus_gen stim1 (
 		.clk,

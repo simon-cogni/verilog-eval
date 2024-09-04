@@ -102,14 +102,14 @@ module tb();
 	logic fan_ref;
 	logic fan_dut;
 
+	wire tb_match;		// Verification
+	wire tb_mismatch = ~tb_match;
 	initial begin 
 		$dumpfile("wave.vcd");
 		$dumpvars(1, stim1.clk, tb_mismatch ,mode,too_cold,too_hot,fan_on,heater_ref,heater_dut,aircon_ref,aircon_dut,fan_ref,fan_dut );
 	end
 
 
-	wire tb_match;		// Verification
-	wire tb_mismatch = ~tb_match;
 	
 	stimulus_gen stim1 (
 		.clk,

@@ -91,14 +91,14 @@ module tb();
 	logic out_anotb_ref;
 	logic out_anotb_dut;
 
+	wire tb_match;		// Verification
+	wire tb_mismatch = ~tb_match;
 	initial begin 
 		$dumpfile("wave.vcd");
 		$dumpvars(1, stim1.clk, tb_mismatch ,a,b,out_and_ref,out_and_dut,out_or_ref,out_or_dut,out_xor_ref,out_xor_dut,out_nand_ref,out_nand_dut,out_nor_ref,out_nor_dut,out_xnor_ref,out_xnor_dut,out_anotb_ref,out_anotb_dut );
 	end
 
 
-	wire tb_match;		// Verification
-	wire tb_mismatch = ~tb_match;
 	
 	stimulus_gen stim1 (
 		.clk,

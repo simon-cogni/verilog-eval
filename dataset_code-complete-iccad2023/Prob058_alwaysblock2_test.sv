@@ -75,14 +75,14 @@ module tb();
 	logic out_always_ff_ref;
 	logic out_always_ff_dut;
 
+	wire tb_match;		// Verification
+	wire tb_mismatch = ~tb_match;
 	initial begin 
 		$dumpfile("wave.vcd");
 		$dumpvars(1, stim1.clk, tb_mismatch ,clk,a,b,out_assign_ref,out_assign_dut,out_always_comb_ref,out_always_comb_dut,out_always_ff_ref,out_always_ff_dut );
 	end
 
 
-	wire tb_match;		// Verification
-	wire tb_mismatch = ~tb_match;
 	
 	stimulus_gen stim1 (
 		.clk,
