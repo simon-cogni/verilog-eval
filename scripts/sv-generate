@@ -633,7 +633,7 @@ def main():
       #   print( "", file=file )
         
       comment_delim = "//"
-      print( comment_delim + " VERILOG-EVAL: response did not use <CODE></CODE> correctly", file=file )
+      print( comment_delim + " VERILOG-EVAL: response did not use [BEGIN][DONE] correctly", file=file )
 
 
   print( "", file=file )
